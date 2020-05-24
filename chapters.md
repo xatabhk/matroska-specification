@@ -12,11 +12,6 @@ The `EditionEntry` is also called an `Edition`.
 An `Edition` contains a set of `Edition` flags and MUST contain at least one `ChapterAtom Element`. Chapters are always inside an `Edition` (or a Chapter itself part of an `Edition`).
 Multiple Editions are allowed. Some of these Editions may be ordered and others not.
 
-### EditionUID
-
-A unique ID with a range from 1 to 18446744073709551615 can be used to identify the `Edition`. It's useful for tagging an `Edition`.
-
-
 ### EditionFlagHidden
 
 When the `EditionFlagHidden` flag is set to false it means the `Edition` is visible and selectable in a `Matroska Player`.
@@ -126,14 +121,6 @@ See [the section on the Linked Segments](#linked-segments) for more information 
 ## ChapterAtom
 The `ChapterAtom` is also called a `Chapter`.
 A `Chapter` element can be used recursively. Such a child `Chapter` is called `Nested Chapter`.
-
-### ChapterUID
-
-The `ChapterUID` is a mandatory Matroska element with a unique ID with a range from 1 to 18446744073709551615.
-
-### ChapterStringUID
-A unique string ID to identify the `Chapter`.
-Use for [WebVTT cue identifier storage](http://dev.w3.org/html5/webvtt/#webvtt-cue-identifier).
 
 ### ChapterTimeStart
 A not scaled timestamp of the start of `Chapter` with nanosecond accuracy.
