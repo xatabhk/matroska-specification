@@ -157,11 +157,10 @@ Chapter 2                | true              | no
 
 ### ChapterFlagEnabled
 
-If the `ChapterFlagEnabled` flag is set to true a `Matroska Player` MUST use this `Chapter`.
+If the `ChapterFlagEnabled` flag is set to false a `Matroska Player` MUST NOT use this `Chapter` and all his `Nested Chapters`.
 For `Simple Chapters` with `ChapterFlagHidden` flag set to false the `Chapter` is visible as chapter mark in the timeline.
 For `Ordered Chapters` a `Matroska Player` MUST use the duration of this `Chapter` even if the `ChapterFlagHidden` flag is set to true.
 
-If the `ChapterFlagEnabled` flag is set to false a `Matroska Player` MUST ignore this `Chapter` and all his `Nested Chapters`.
 For `Simple Chapters` is no chapter mark in the timeline available even if the `ChapterFlagHidden` flag is set to false.
 For `Ordered Chapters` a `Matroska Player` MUST not use the duration(and other information) of this `Chapter`.
 
