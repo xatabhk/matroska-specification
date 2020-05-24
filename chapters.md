@@ -127,10 +127,12 @@ A not scaled timestamp of the start of `Chapter` with nanosecond accuracy.
 For `Simple Chapters` this is the position of the chapter markers in the timeline.
 
 ### ChapterTimeEnd
-A timestamp of the end of `Chapter` with nanosecond accuracy.  The timestamp is excluded and also not scaled.
-The end timestamp is used when the `Edition EditionFlagOrdered` flag is set to true.
-A `Matroska Player` have to calculate a duration for this `Chapter` with the difference of end timestamp and start timestamp.
-The end timestamp MUST be greater than the start timestamp otherwise the duration would be negative which is illegal. If the duration of a `Chapter` is 0, this `Chapter` will be ignored by a `Matroska Player`.
+A not scaled timestamp of the end of `Chapter` with nanosecond accuracy.
+The end timestamp is used when the `EditionFlagOrdered` flag of the `Edition` is set to true.
+The timestamp defined by the `ChapterTimeEnd` is not part of the `Chapter`.
+A `Matroska Player` calculates the duration of this `Chapter` using the difference between the `ChapterTimeEnd` and `ChapterTimeStart`.
+The end timestamp MUST be greater than the start timestamp otherwise the duration would be negative which is illegal.
+If the duration of a `Chapter` is 0, this `Chapter` MUST be ignored.
 
 Chapter   | Start timestamp | End timestamp | Duration
 ----------|-----------------|---------------|------
