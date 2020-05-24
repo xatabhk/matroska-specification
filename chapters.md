@@ -38,47 +38,49 @@ Chapter 2                       |       | X    | no
 
 ### EditionFlagDefault
 
-Only one `Edition` SHOULD have an `EditionFlagDefault` flag set to true. The first `Edition` with both the `EditionFlagDefault` flag set to true and the `EditionFlagHidden` flag set to false is the `Default Edition`. When all `EditionFlagDefault` flags are set to false, then the first `Edition` is the `Default Edition`.
+Only one `Edition` SHOULD have an `EditionFlagDefault` flag set to true.
 
-Edition   | FlagHidden | FlagDefault | Edition to play
+### Default Edition
+
+The `Default Edition` is the `Edition` that a `Matroska Player` SHOULD use for playback by default.
+
+The first `Edition` with both the `EditionFlagDefault` flag set to true and the `EditionFlagHidden` flag set to false is the `Default Edition`.
+When all `EditionFlagDefault` flags are set to false and all `EditionFlagHidden` flag set to true, then the first `Edition` is the `Default Edition`.
+When all `EditionFlagHidden` flags are set to true, then the first `Edition` with the `EditionFlagDefault` flag set to true is the `Default Edition`.
+When all `EditionFlagDefault` flags are set to false, then the first `Edition` with the `EditionFlagHidden` flag set to false is the `Default Edition`.
+When there is no `Edition` with a `EditionFlagDefault` flag are set to true and a `EditionFlagHidden` flags are set to false, then the first `Edition` with the `EditionFlagHidden` flag set to false is the `Default Edition`.
+
+In other words, in case the `Default Edition` is not obvious, the first `Edition` with a `EditionFlagHidden` flag set to false should be preferred.
+
+Edition   | FlagHidden | FlagDefault | Default Edition
 ----------|------------|-------------|----------------
 Edition 1 | true       | true        |
 Edition 2 | true       | true        |
 Edition 3 | false      | true        | X
 
-If the `Default Edition's` `EditionFlagHidden` flag is set to true, then a `Matroska Player` SHOULD play this `Edition` only if all other `Edition` `EditionFlagHidden` flags are set to true.
+Edition   | FlagHidden | FlagDefault | Default Edition
+----------|------------|-------------|----------------
+Edition 1 | true       | false       | X
+Edition 2 | true       | false       |
+Edition 3 | true       | false       |
 
-Edition   | FlagHidden | FlagDefault | Edition to play
+Edition   | FlagHidden | FlagDefault | Default Edition
 ----------|------------|-------------|----------------
 Edition 1 | true       | false       |
 Edition 2 | true       | true        | X
 Edition 3 | true       | false       |
 
-Exists an `Edition`  with `EditionFlagHidden` flag set to false, the `Matroska Player` MUST play this `Edition`.
-
-Edition   | FlagHidden | FlagDefault | Edition to play
-----------|------------|-------------|----------------
-Edition 1 | true       | false       |
-Edition 2 | true       | true        |
-Edition 3 | false      | false       | X
-
-
-If no `Default Edition` is specified a `Matroska Player` MUST play the first `Edition` with the `EditionFlagHidden` flag is set to false.
-
-Edition   | FlagHidden | FlagDefault | Edition to play
+Edition   | FlagHidden | FlagDefault | Default Edition
 ----------|------------|-------------|----------------
 Edition 1 | true       | false       |
 Edition 2 | false      | false       | X
 Edition 3 | false      | false       |
 
-
-When all `EditionFlagHidden` flags are set to true, then the first `Edition` MUST be played by the `Matroska Player`.
-
-Edition   | FlagHidden | FlagDefault | Edition to play
+Edition   | FlagHidden | FlagDefault | Default Edition
 ----------|------------|-------------|----------------
-Edition 1 | true       | false       | X
-Edition 2 | true       | false       |
-Edition 3 | true       | false       |
+Edition 1 | true       | false       |
+Edition 2 | true       | true        |
+Edition 3 | false      | false       | X
 
 ### EditionFlagOrdered
 
