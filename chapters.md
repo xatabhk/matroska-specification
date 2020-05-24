@@ -141,8 +141,6 @@ Chapter 2 | 1000000000      | 5000000000    | 4000000000
 Chapter 3 | 6000000000      | 6000000000    | 0 (chapter not used)
 Chapter 4 | 9000000000      | 8000000000    | -1000000000 (illegal)
 
-In the Matroska menu systems (Native,DVD) is the usage of an end timestamp depended on the current process.
-
 ### ChapterFlagHidden
 
 The `ChapterFlagHidden` flag works a bit different as the `EditionFlagHidden` flag. Each `Chapters ChapterFlagHidden` flag works independent.
