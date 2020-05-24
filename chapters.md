@@ -38,7 +38,7 @@ Chapter 2                       |       | X    | no
 
 ### EditionFlagDefault
 
-It is RECOMMENDED that no more than one `Edition` have an `EditionFlagDefault` flag set to true. The first `Edition` with both the `EditionFlagDefault` flag set to true and the `EditionFlagHidden` flag set to false is the `Default Edition`. When all `EditionFlagDefault` flags are set to false, then the first `Edition` is the `Default Edition`.
+Only one `Edition` SHOULD have an `EditionFlagDefault` flag set to true. The first `Edition` with both the `EditionFlagDefault` flag set to true and the `EditionFlagHidden` flag set to false is the `Default Edition`. When all `EditionFlagDefault` flags are set to false, then the first `Edition` is the `Default Edition`.
 
 Edition   | FlagHidden | FlagDefault | Edition to play
 ----------|------------|-------------|----------------
